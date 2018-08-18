@@ -80,7 +80,19 @@ window.onload = function () {
             guessCounter.textContent = Counter;
             //when Counter reaches 0, page reloads, resetting everything
         } else if (Counter === 0) {
-            location.reload();
+            //resets movieLetters length to 0
+            movieLetters.length = 0;
+            //chooses different random movie and replaces letters with dashes
+            randomMovie();
+            dashes = dashWord();
+            //resets Counter to 12, which shows in the HTML
+            Counter = 12;
+            guessCounter.textContent = Counter;
+            //changes number of letters according to the new random movie title
+            letterNumber.textContent = movieLetters.length;
+            //empties guesses list and gets rid of afterWin message
+            guesses.textContent = "";
+            guessTries.length = 0;
         };
 
         //if game is being played
