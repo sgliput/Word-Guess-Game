@@ -28,7 +28,7 @@ window.onload = function () {
 
     //replaces movieLetters with the same number of dashes
     function dashWord() {
-        var dash = "-";
+        var dash = "–";
         var dashes = dash.repeat(movieLetters.length);
         randomWord.textContent = dashes;
         return dashes.split("");
