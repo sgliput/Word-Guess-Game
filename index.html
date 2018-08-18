@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src = "assets/javascript/game.js"></script>
 </head>
 
 <body>
+    <div class="top">
+     <img class="ship1" src="assets/images/enterprise.png" height="100px" width="100px"><h1>Sci-Fi Hangman</h1>
+    </div>
+     <div class = "container">
     <p>Type letters to try to guess the one-word sci-fi movie below.</p>
     <p>Wins:
         <span id="wins">0</span>
@@ -25,7 +32,7 @@
     </p>
     <p><span id = "afterWin"></span></p>
     <span id = "poster"><img src="assets/images/questionmark.jpg" height="300px" width="225px"></span>
-
+</div>
     
 
 </body>

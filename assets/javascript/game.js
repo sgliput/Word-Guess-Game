@@ -3,7 +3,7 @@
         var wins = 0;
         var Counter = 12;
         var guessTries = [];
-        var dash = "-";
+        var dash = "-&nbsp;";
         var gamePlaying = true;
 
 
@@ -71,7 +71,7 @@
                 };
 
                 replaceLetters(movieLetters);
-                if (Counter > 0) {
+                if (Counter > 0 && !movieLetters.includes(userGuess)) {
                     Counter--;
                     guessCounter.textContent = Counter;
                 } else if (Counter === 0) {
@@ -85,8 +85,8 @@
                         afterWin.textContent = "Good job. Hit any key to play again.";
                         document.querySelector("#poster").innerHTML = '<img src="assets/images/' + movieLetters.join("").toLowerCase() + '.jpg" height="300px" width="225px">';
                         gamePlaying = false;
-                        //document.body.addEventListener('keypress', randomMovie());
-                        //dashWord();
+                        var shipMove = document.querySelector(".ship1");
+                        shipMove.style.animationName = "movement1";
                     }
                 } else {
                     movieLetters.length = 0;
@@ -100,6 +100,8 @@
                     guessTries.length = 0;
                     afterWin.textContent = "";
                     document.querySelector("#poster").innerHTML = '<img src="assets/images/questionmark.jpg" height="300px" width="225px">';
+                    var shipMove = document.querySelector(".ship1");
+                    shipMove.style.animationName = "noFly";
                 }
             };
         };
