@@ -6,19 +6,24 @@ body{
 
 .top{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
     position: relative;
-    left: 34%;
+    left: -4%;
     z-index: 1;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .container{
     background-color: #18aba6;
-    width: 30%;
+    width: 40%;
     margin: 3% auto;
     padding: 2%;
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 1.2rem;
 }
 
 
@@ -26,7 +31,7 @@ h1{
 
 @keyframes movement1 {
     from {left: -1000px}
-    to {left: 2000px; right: -2000px;}
+    to {left: 1500px; right: -1500px;}
 }
 
 .ship1 {
@@ -34,10 +39,10 @@ h1{
     height: 100px;
     left: -1000px; 
     position: relative;
-    float: left;
+    
 
    
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-timing-function: linear;
 } 
 

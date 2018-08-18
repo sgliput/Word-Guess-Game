@@ -6,15 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Baloo+Bhai" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src = "assets/javascript/game.js"></script>
 </head>
 
 <body>
+    <br>
     <div class="top">
-     <img class="ship1" src="assets/images/enterprise.png" height="100px" width="100px"><h1>Sci-Fi Hangman</h1>
+     <img class="ship1" src="assets/images/enterprise.png" height="100px" width="100px">
+     <h1><i class="far fa-hand-spock"></i>
+        Sci-Fi Hangman
+        <i class="far fa-hand-spock"></i>
+    </h1>
     </div>
      <div class = "container">
     <p>Type letters to try to guess the one-word sci-fi movie below.</p>
@@ -22,7 +29,7 @@
         <span id="wins">0</span>
     </p>
     <p>Current Word:
-        <span id="randomWord"></span>
+        <span id="randomWord"></span> &nbsp;(<span id="letterNumber"></span> Letters)
     </p>
     <p>Number of guesses remaining:
         <span id="guessCounter">12</span>
@@ -34,7 +41,7 @@
     <span id = "poster"><img src="assets/images/questionmark.jpg" height="300px" width="225px"></span>
 </div>
     
-
 </body>
+
 
 </html>
