@@ -1,6 +1,6 @@
 //array of movie options
 var potentialWords = ["Inception", "Primer", "Surrogates", "Aliens", "Serenity", "Signs", "Starman", "Spaceballs", "Gravity", "Arrival", "Akira", "Coma", "Innerspace", "Elysium", "Looper", "Tron", "Dune", "Avatar", "Interstellar", "Prometheus", "Skyline", "Brazil", "Westworld", "Sunshine", "Cloverfield", "Knowing", "Zathura", "Existenz", "Predator", "Frequency"];
-
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 //global variables
 var wins = 0;
 var Counter = 12;
@@ -33,7 +33,7 @@ window.onload = function () {
         randomWord.textContent = dashes;
         return dashes.split("");
     };
-    
+
     //sets dashWord() function equal to dashes variable
     dashes = dashWord();
     //shows the number of letters in the random movie title
@@ -44,20 +44,6 @@ window.onload = function () {
 
         //userGuess equals the key pressed
         var userGuess = event.key.toUpperCase();
-
-
-        //This function adds each key pressed to the guessTries array
-        function guessList() {
-            guessTries.push(userGuess);
-            var printThis = "";
-            for (var i = 0; i < guessTries.length; i++) {
-                printThis += guessTries[i] + ", ";
-            }
-            return printThis;
-        };
-
-        //inserts the result of the above function into the HTML for list of guesses made
-        document.querySelector("#guesses").innerHTML = guessList();
 
         //replaces dashes with letters as they are typed
         function replaceLetters(movieLetters) {
@@ -74,8 +60,8 @@ window.onload = function () {
         //calls replaceLetters function
         replaceLetters(movieLetters);
 
-        //reduces Counter by one every time a letter not in movieLetters is pressed
-        if (Counter > 0 && !movieLetters.includes(userGuess)) {
+        //reduces Counter by one every time you press a letter (only a letter) not in movieLetters and not already guessed
+        if (Counter > 0 && !movieLetters.includes(userGuess) && !guessTries.includes(userGuess) && letters.includes(userGuess.toLowerCase())) {
             Counter--;
             guessCounter.textContent = Counter;
             //when Counter reaches 0, page reloads, resetting everything
@@ -94,6 +80,21 @@ window.onload = function () {
             guesses.textContent = "";
             guessTries.length = 0;
         };
+
+        //This function adds each key pressed to the guessTries array, as long as it hasn't been pressed already
+        function guessList() {
+            if (!guessTries.includes(userGuess) && letters.includes(userGuess.toLowerCase())) {
+                guessTries.push(userGuess);
+            };
+            var printThis = "";
+            for (var i = 0; i < guessTries.length; i++) {
+                printThis += guessTries[i] + ", ";
+            }
+            return printThis;
+        };
+
+        //inserts the result of the above function into the HTML for list of guesses made
+        document.querySelector("#guesses").innerHTML = guessList();
 
         //if game is being played
         if (gamePlaying) {

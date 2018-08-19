@@ -8,9 +8,9 @@ The game.js file contains the JavaScript that allows the Hangman game in index.h
 
 ### Gameplay
 
-1.  When the game is open, simply type a letter on the keyboard. If the random movie's name contains that letter, it will replace the corresponding dash with the letter. If the movie's name does not contain the letter, it will reduce the guess counter by one. The key will be added to the guess list regardless if it is right or wrong.
+1.  When the game is open, simply type a letter on the keyboard. (Only a letter is accepted.) If the random movie's name contains that letter, it will replace the corresponding dash with the letter. If the movie's name does not contain the letter, it will reduce the guess counter by one. The letter will be added to the guess list regardless if it is right or wrong, and there will be no effect from pressing that key again.
 
-2. If the guess counter reaches 0 without completing the movie name, the page reloads and resets everything.
+2. If the guess counter reaches 0 without completing the movie name, a new word is chosen and everything is reset.
 
 3. When the movie's letters are all filled in, the wins counter goes up, the Enterprise flies across the screen (courtesy of a CSS animation triggered by JavaScript), a "Good job" message appears and says to click any key to play again, and the question mark image is replaced by a poster for the random movie you completed.
 
